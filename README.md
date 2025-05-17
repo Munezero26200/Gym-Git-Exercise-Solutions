@@ -432,3 +432,156 @@ $ git reset team.html
 Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
 $
 ```
+## Bundle2
+### Exercise1
+```bash
+$ git stash pop stash@{1}
+fatal: log for 'stash' only has 1 entries
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git stash pop stash@{0}
+index.html: needs merge
+error: could not write index
+The stash entry is kept in case you need it again.
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git statuss
+git: 'statuss' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git add index.html
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git commit -m "Resolved conflict"
+[dev d8537ae] Resolved conflict
+ 1 file changed, 11 insertions(+)
+ create mode 100644 about.html
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exer
+cises_Project (dev)
+$ git push origin dev
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 434 bytes | 434.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0
+)
+remote: Resolving deltas: 100% (1/1), completed with 1 local
+ object.
+To https://github.com/Munezero26200/Gym-Git-Exercise-Solutions.git
+   b5197ea..d8537ae  dev -> dev
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git reset team.html
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git add .
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git commit -m "terminal history of Exercise2"
+[dev 6985b14] terminal history of Exercise2
+ 1 file changed, 290 insertions(+)
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.83 KiB | 483.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Munezero26200/Gym-Git-Exercise-Solutions.git
+   d8537ae..6985b14  dev -> dev
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$
+ *  History restored 
+
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)xercises_Project (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean       
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git branch ft/bundle-2
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git add .
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git commit -m "Here is new page"
+[dev c2c1732] Here is new page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 services.html
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git pull
+Already up to date.
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git push origin service.html
+error: src refspec service.html does not match any
+error: failed to push some refs to 'https://github.com/Munezero26200/Gym-Git-Exercise-Solutions.git'
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 1 commit.        
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Admin@DESKTOP-JJ9VPBQ MINGW64 ~/Documents/Documents/Git_Exercises_Project (dev)
+$ git push origin dev
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 457 bytes | 457.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Munezero26200/Gym-Git-Exercise-Solutions.git
+   6985b14..c2c1732  dev -> dev
+   ```
